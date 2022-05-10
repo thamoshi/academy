@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url('./images/space_amongus.gif');
+  background-blend-mode: lighten;
+  background-position: center;
+}
+header {
+  background-color: #80c8de;
+  border-radius: 42px;
+  border: 4px solid #000000;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  font-size: 5vw;
+  font-family: "Lato", sans-serif;;
+}
+#slogan {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25%;
+}
+hr {
+  border:2px solid #39646f;
+}
+.page {
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+#sideNav{
+  background-color: #8c0337;
+  float: left;
+  position: sticky;
+  height: 100%;
+  top: 1%;
+  z-index: 1;
+  border-radius: 0px 8px 8px 0px;
+}
+.listRed {
+  padding-bottom: 10px;
+  list-style-image: url('./images/amongus-red.png');
+}
+.listYellow {
+  padding-bottom: 10px;
+  list-style-image: url('./images/amongus-yellow.png');
+}
+.listGreen {
+  padding-bottom: 10px;
+  list-style-image: url('./images/amongus-green.png');
+}
+.listBlue {
+  padding-bottom: 10px;
+  list-style-image: url('./images/amongus-blue.png');
+}
+.listOrange {
+  padding-bottom: 10px;
+  list-style-image: url('./images/amongus-orange.png');
+}
+.menu {
+  font-size: 24px;
+  padding: 10px;
+  text-decoration: none;
+}
+.menu:link {
+  color: #f6fbfd;
+}
+.menu:visited {
+  color: #f6fbfd;
+}
+.menu:hover {
+  background-color: rgb(192, 44, 44);
+  color: #323839;
+}
+.main {
+  margin-left: 260px;
+  padding: 10px;
+  background-color: rgb(192, 44, 44);
+  color: #f6fbfd;
+  font-size: 3vw;
+}
+.intro {
+  text-align: center;
+  font-size: 3vw;
+}
+.gallery {
+  text-align: center;
+}
+.item {
+  display: inline-block;
+  text-align: center;
+  background-color: #8c0337;
+  margin: 5px;
+  border: 1px solid white;
+  width: 180px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1vw;
+}
+div.item:hover {
+  border: 1px solid slategray;
+}
+div.item img {
+  width: 100%;
+  height: auto;
+}
+.itemTitle {
+  margin: 10px;
+}
+#contactform {
+  padding: 10px;
+  font-size: 1vw;
+}
+article {
+  padding: 10px;
+  font-size: 2vw;
+}
+/* @media only screen and (max-width: 620px) {
+  .menu, #sideNav, .listDefault, .listFood {
+    width: 100%;
+  }
+} */

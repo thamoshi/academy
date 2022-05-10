@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!--Document type declaration-->
+<html lang="pt-BR"> <!--beginning od the document-->
+
+<head>
+  <title>Susshi</title>
+  <link rel="icon" type="image/x-icon" href="./images/susshi_icon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles3.css">
+</head>
+
+<body>
+  <header>
+    <b>SusShi</b> <br>
+    <span id="slogan">Não existe <span style="color:red;font-weight:bold">nenhum sushi</span> igual ao nosso. </span>
+  </header>
+
+  <hr>
+  
+  <div class="page">
+    <div id="sideNav">
+      <ul>
+        <li class="listRed"><a class="menu" href="./home.html" title="Página Inicial">HOME</a></li>
+        <li class="listYellow"><a class="menu" href="./sushis.html" title="Cardápio de sushis">Sushis</a></li>
+        <li class="listBlue"><a class="menu" href="./specials.html" title="Cardápio de pratos especiais">Pratos Especiais</a></li>
+        <li class="listGreen"><a class="menu" href="./contactus.html" title="Informações para contato">Contatos</a></li>
+        <li class="listOrange"><a class="menu" href="./whoweare.html" title="Conheça a Susshi">Quem somos</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+
+      <div class="intro">
+        <h2>Entre em contato com a gente!</h2>
+        <p>Duvidas ou sugestões? Só preencher o formulário abaixo.</p>
+      </div>
+
+      <form id="contactform">
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <span>Gênero:</span>
+        <input type="radio" id="man" name="gender" value="man">
+        <label for="man">Homem</label>
+        <input type="radio" id="woman" name="gender" value="woman">
+        <label for="woman">Mulher</label>
+        <input type="radio" id="notspecified" name="gender" value="notspecified">
+        <label for="notspecified">Prefiro não responder</label><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="message">Deixe seu comentário aqui:</label><br>
+        <textarea id="message" name="message" rows="10" cols="30"> </textarea><br><br>
+
+        <input type="reset" value="Enviar" onclick="alert('Resposta submetida. Obrigado!')">
+      </form>
+      
+      <p><b>Onde estamos:</b></p>
+      <!-- <iframe src="https://www.google.com/maps/" title="Localização" allowfullscreen></iframe> -->
+      <a id="maps" href="https://www.google.com/maps/place/Creditas/@-23.6056434,-46.6982593,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce573433dd2aa3:0xd5796b9fb756e2b4!8m2!3d-23.6055922!4d-46.696169" target="_blank">
+        <img src="./images/creditas_maps.png" alt="mapsRestaurante" width="75%" height="auto">
+      </a>
+    </div>
+  </div>
+</body>
