@@ -79,6 +79,7 @@ hr {
 }
 .main {
   margin-left: 260px;
+  margin-right: 260px;
   padding: 10px;
   background-color: rgb(192, 44, 44);
   color: #f6fbfd;
