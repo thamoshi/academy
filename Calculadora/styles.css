@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+
+body {
+  background-image: url('./images/doge.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+}
+
+.dogeComment {
+  margin-top: 5vh;
+  height: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: purple;
+  font-size: 2em;
+}
+
+.calculator {
+  background-color: rgba(189, 189, 189, 0.699);
+  width: 500px;
+  height: 720px;
+  border-radius: 16px;
+  border: 3px solid rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, 100px);
+  grid-template-areas: "header header header header";
+}
+
+.calculator > .display {
+  background-color: rgba(0,0,0,0.699);
+  grid-area: header;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: white;
+  font-size: 3em;
+}
+
+.calculator > button {
+  font-size: 2em;
+  border-radius: 8px;
+}
+
+.calculator > .number {
+  background-color: rgba(255,255,255,0.699);
+}
+
+.calculator > .number:hover { 
+  background-color: rgba(255,255,255,0.9);
+}
+
+.calculator > .operator {
+  background-color: rgba(170, 255, 121, 0.699);
+}
+
+.calculator > .operator:hover {
+  background-color: rgba(170, 255, 121,0.9);
+}
+
+.calculator > .allClear {
+  background-color: rgba(255, 79, 47, 0.699);
+}
+
+.calculator > .allClear:hover {
+  background-color: rgba(255, 79, 47, 0.9);
+}
+
+.calculator > .clear {
+  background-color: rgba(252, 128, 71, 0.699);
+}
+
+.calculator > .clear:hover {
+  background-color: rgba(252, 128, 71, 0.9);
+}
+
+.calculator > .numberSign {
+  background-color: rgba(170, 255, 121, 0.699);
+}
+
+.calculator > .numberSign:hover { 
+  background-color: rgba(170, 255, 121, 0.9);
+}
+
+.calculator > .equal {
+  grid-column: span 2;
+  background-color: rgba(170, 255, 121, 0.699);
+}
+
+.calculator > .equal:hover {
+  background-color: rgba(170, 255, 121, 0.9);
+}
