@@ -1,3 +1,4 @@
+const PRESSABLE_BUTTONS = ['1','2','3','4','5','6','7','9','0','.','+','-','*','/','Enter','Delete','Backspace']
 const DOGE_PHRASES = ['wow', 'such math', 'very equation', 'much smart', 'many calculus','many correct','so numberus']
 const PRESSED_OPERATOR_COLOR = "rgba(255, 235, 121, 0.699)"
 
@@ -164,4 +165,10 @@ allClearButton.addEventListener('click', () => {
 clearButton.addEventListener('click', () => {
   calculator.clear();
   calculator.updateDisplay();
+})
+
+document.addEventListener('keyup',(event) => {
+  if (PRESSABLE_BUTTONS.includes(event.key)){
+    document.getElementById(event.key).click()
+  }
 })
