@@ -1,6 +1,6 @@
 const PRESSABLE_BUTTONS = ['1','2','3','4','5','6','7','9','0','.','+','-','*','/','Enter','Delete','Backspace']
 const DOGE_PHRASES = ['wow', 'such math', 'very equation', 'much smart', 'many calculus','many correct','so numberus']
-const PRESSED_OPERATOR_COLOR = "rgba(255, 235, 121, 0.699)"
+const PRESSED_OPERATOR_COLOR = "rgba(255, 235, 121, 0.7)"
 
 function dogePhraseGenerator() {
   return DOGE_PHRASES[Math.floor(Math.random() * DOGE_PHRASES.length)]
@@ -34,6 +34,14 @@ class Calculator {
   };
   
   setOperator(operatorElement) {
+    if (this.operatorElement && this.operatorElement.style.backgroundColor === PRESSED_OPERATOR_COLOR) {
+      console.log('entrou aqui')
+      this.operatorElement.style.backgroundColor = '';
+      this.operatorElement = operatorElement;
+      this.operatorElement.style.backgroundColor = PRESSED_OPERATOR_COLOR;
+      return
+    }
+
     if (this.result) {
       this.bufferedNumber = this.result;
       this.result = undefined;
@@ -43,15 +51,10 @@ class Calculator {
       this.updateDisplay();
       this.bufferedNumber = this.result;
       this.result = undefined;
-
     } else {
       this.bufferedNumber = this.currentNumber;
     }
 
-
-    if (this.operatorElement) {
-      this.operatorElement.style.backgroundColor = '';
-    }
     this.operatorElement = operatorElement;
     this.operatorElement.style.backgroundColor = PRESSED_OPERATOR_COLOR;
   }
@@ -62,39 +65,44 @@ class Calculator {
       this.bufferedNumber = undefined;
       this.operandNumber = this.displayElement.innerHTML;
     }
-
-    switch(this.operatorElement.innerHTML){
-      case '+':
-        this.result = (parseFloat(this.result) + parseFloat(this.operandNumber)).toString();
-        break
-      case '-':
-        this.result = (parseFloat(this.result) - parseFloat(this.operandNumber)).toString();
-        break
-      case '÷':
-        this.result = (parseFloat(this.result) / parseFloat(this.operandNumber)).toString();
-        break
-      case '*':
-        this.result = (parseFloat(this.result) * parseFloat(this.operandNumber)).toString();
-        break
+    if (this.result && this.operatorElement && this.operandNumber){
+      switch(this.operatorElement.innerHTML){
+        case '+':
+          this.result = (parseFloat(this.result) + parseFloat(this.operandNumber)).toString();
+          break
+        case '-':
+          this.result = (parseFloat(this.result) - parseFloat(this.operandNumber)).toString();
+          break
+        case '÷':
+          this.result = (parseFloat(this.result) / parseFloat(this.operandNumber)).toString();
+          break
+        case '*':
+          this.result = (parseFloat(this.result) * parseFloat(this.operandNumber)).toString();
+          break
+      }
+  
+      this.currentNumber = this.result;
+      this.operatorElement.style.backgroundColor = '';
     }
-
-    this.currentNumber = this.result;
-    this.operatorElement.style.backgroundColor = '';
   }
 
   switchNumberSign() {
-    if (this.currentNumber.includes('-')) {
-      this.currentNumber = this.currentNumber.replace('-','');
+    if (this.displayElement.innerHTML.includes('-')) {
+      this.currentNumber = this.displayElement.innerHTML.replace('-','');
     } else {
-      this.currentNumber = '-' + this.currentNumber;
+      this.currentNumber = '-' + this.displayElement.innerHTML;
     };
   }
 
   updateDisplay() {
-    if (this.currentNumber.includes('.')) {
+    if (/^0*$/.test(this.currentNumber)){
+      this.currentNumber = '0'
+    }
+
+    if (parseFloat(this.currentNumber)==0) {
       this.displayElement.innerHTML = this.currentNumber;
     } else {
-      this.displayElement.innerHTML = parseFloat(this.currentNumber).toString();
+      this.displayElement.innerHTML = parseFloat(parseFloat(this.currentNumber).toFixed(16));
     }
   }
 
